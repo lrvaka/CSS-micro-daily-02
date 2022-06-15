@@ -8,8 +8,6 @@ My first attempt at the BEM naming convention.
 
 ## Original   
 <img src="https://user-images.githubusercontent.com/3280206/173957330-26d6cec2-dff7-470d-a966-85010b5592c7.png" width="500" >
-
-<img src="https://user-images.githubusercontent.com/3280206/173955882-ce16c250-793f-44b0-959a-bc67e5f4ce5f.png" width="500" >
 <img src="https://user-images.githubusercontent.com/3280206/173957627-b3254b35-4acd-4d5e-8fd9-5936b8e5b0ff.png" width="500" >  
 
 ## Recreation  
