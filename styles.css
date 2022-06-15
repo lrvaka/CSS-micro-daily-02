@@ -1,198 +1,300 @@
 :root {
-  --header-height: 56px;
+  --color-fg-default: #c9d1d9;
+  --color-canvas-default: #0d1117;
+  --color-fg-muted: #8b949e;
+  --color-btn-text: #c9d1d9;
+  --color-btn-border: rgba(240, 246, 252, 0.1);
+  --color-border-default: #30363d;
+  --color-success-fg: #3fb950;
+  --color-success-emphasis: #238636;
+  --color-accent-fg: #58a6ff;
+  --Layout-sidebar-width: 256px;
+  --Layout-gutter: 16px;
 }
 
 * {
   padding: 0;
   margin: 0;
   list-style: none;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
-  background-color: #18191a;
-}
-
-.navWrapper {
-  position: relative;
-  height: var(--header-height);
+  background-color: #161b22;
   color: white;
-  background-color: #242526;
 }
 
-.leftNav {
-  height: var(--header-height);
-  z-index: 2;
+.container {
+  padding: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.sidebar__top {
   display: flex;
   align-items: center;
-  position: fixed;
-  padding: 0px 16px;
-  font-size: 0.9375rem;
+  margin-bottom: 24px;
 }
 
-.leftNav > div {
-  display: flex;
-}
-
-.leftNav > div > input {
-  padding: 10px 10px 10px 0px;
-  background-color: #3a3b3c;
-  outline: none;
-  border: none;
-  color: #b0b3b8;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  width: 212px;
-}
-
-.leftNav > div > svg {
-  margin-left: 9px;
-  padding: 12px;
-  background-color: #3a3b3c;
-  outline: none;
-  border: none;
-  color: #b0b3b8;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-}
-
-.fbLogo {
-  cursor: pointer;
-  width: 40px;
+.profile-img-container {
   position: relative;
+  width: min-content;
 }
 
-.middleNav {
-  position: fixed;
-  height: var(--header-height);
-  top: 0;
-  right: 0;
-  left: 0;
+.profile__image {
+  width: 16.66666666%;
+  min-width: 66.52px;
+  border-radius: 100%;
+  margin-right: 16px;
+}
+
+.profile-badge {
+  display: none;
+}
+
+.profile__title {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  color: #b0b3b8;
+  padding: 16px 0;
 }
 
-.middleNav > li {
-  height: 100%;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  flex-grow: 1;
-  min-width: 50px;
-  max-width: 129.6px;
-  transition: all 100ms cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-
-.middleNav > li:hover {
-  background-color: #3a3b3c;
-  border-radius: 10px;
-}
-
-.middleNav > li > a {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-}
-
-.rightNav {
-  height: var(--header-height);
-  position: fixed;
-  top: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  padding-right: 16px;
-}
-
-.rightNavProfile {
-  font-size: 15px;
-  display: flex;
-  align-items: center;
+.profile__name {
+  font-size: 24px;
+  line-height: 1.25;
   font-weight: 600;
-  margin-right: 15px;
 }
 
-.rightNavProfile > img {
-  width: 28px;
-  margin-right: 5px;
-  border-radius: 100%;
+.profile__username {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  color: var(--color-fg-muted);
 }
 
-.rightNav > ul {
+.sidebar__bottom {
+  margin-bottom: 16px;
+}
+
+.profile__info {
   display: flex;
-  align-self: center;
-  gap: 7.5px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
-.rightNav > ul > li {
+.profile__status {
+  display: flex;
   cursor: pointer;
-  background-color: #3a3b3c;
-  border-radius: 100%;
-  padding: 10px;
+  gap: 10px;
+  align-items: center;
+  color: var(--color-fg-muted);
+  font-size: 12px;
+  fill: var(--color-fg-muted);
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid var(--color-border-default);
+  color: var(--color-fg-muted);
+  padding: 8px 4px;
+}
+
+.profile__status > svg {
+  padding-left: 5px;
+}
+
+.profile__status:hover {
+  color: #58a6ff;
+  fill: #58a6ff;
+}
+
+.profile__edit {
+  cursor: pointer;
+  background-color: #21262d;
+  color: var(--color-btn-text);
+  border: 1px solid var(--color-btn-border);
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  padding: 5px 16px;
+}
+
+.profile__info-more {
   display: flex;
-  align-self: center;
-  transition: all 100ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  flex-direction: column;
+  margin-bottom: 16px;
 }
 
-.rightNav > ul > li:hover {
-  background-color: #4a4a4b;
+.profile__website {
+  display: flex;
+  align-items: center;
 }
 
-.rightNav > ul > li > svg {
-  height: 20px;
-  width: 20px;
+.profile__website > svg {
+  fill: var(--color-fg-muted);
 }
 
-#createButton {
+.profile__website > a {
+  text-decoration: none;
+  color: var(--color-fg-default);
+  font-size: 14px;
+}
+
+.profile__website > a:hover {
+  text-decoration: underline;
+  color: #58a6ff;
+  fill: #58a6ff;
+}
+
+.profile__location {
   display: none;
+  color: var(--color-fg-default);
+  font-size: 14px;
+  fill: var(--color-fg-muted);
 }
 
-#moreButton {
-  display: none;
+.profile__follows {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--color-fg-muted);
 }
 
-@media only screen and (max-width: 1260px) {
-  .leftNav > div > svg {
-    border-radius: 50px;
-  }
-  .leftNav > div > input {
-    display: none;
-  }
-  .middleNav > li {
-    max-width: 111.6px;
-  }
-  .rightNavProfile {
-    display: none;
-  }
+.profile__follower {
+  display: flex;
+  align-items: center;
 }
 
-@media only screen and (max-width: 1100px) {
-  #menuButton {
+.profile__follower > svg {
+  fill: var(--color-fg-muted);
+}
+
+.profile__follower > span {
+  color: var(--color-fg-default);
+  font-weight: 600;
+}
+
+.profile__following > span {
+  color: var(--color-fg-default);
+  font-weight: 600;
+}
+
+.sidebar__achievements {
+  border-top: 1px solid var(--color-border-default);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.achievement__heading {
+  color: var(--color-fg-default);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.achievements__img {
+  width: 64px;
+}
+
+.achievement__bottom-section > span {
+  line-height: 18px;
+  margin-right: 4px;
+  font-weight: 400;
+  border-radius: 2em;
+  padding: 0.12em 0.5em;
+  font-size: 85%;
+  color: var(--color-success-fg);
+  border: 1px solid var(--color-success-emphasis);
+}
+
+.achievement__bottom-section > a {
+  color: var(--color-accent-fg);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 0 minmax(
+        0,
+        calc(100% - var(--Layout-sidebar-width) - var(--Layout-gutter))
+      );
+    grid-gap: var(--Layout-gutter);
+    padding: 24px;
+  }
+
+  .sidebar__top {
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 0px;
+  }
+
+  .sidebar-profile {
+    width: var(--Layout-sidebar-width);
+  }
+
+  .profile__image {
+    width: 100%;
+  }
+
+  .profile__status {
     display: none;
   }
-  #createButton {
+
+  .profile__follows {
+    margin-bottom: 16px;
+  }
+
+  .profile__location {
+    display: block;
+  }
+
+  .profile-img-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .profile__info-more {
+    flex-direction: column-reverse;
+  }
+  .profile__website > a {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+  }
+
+  .profile-badge {
     display: flex;
-  }
-  #gamingButton {
-    display: none;
-  }
-  #moreButton {
-    display: flex;
-  }
-  .middleNav > li {
-    max-width: calc(15vw - 55px);
+    background-color: var(--color-canvas-default);
+    fill: var(--color-fg-muted);
+    border: 1px solid var(--color-border-default);
+    border-radius: 2em;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    left: 100%;
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 32px;
+    margin-left: -40px;
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .middleNav {
-    padding: 0 110px;
-    justify-content: start;
-  }
-  .middleNav > li:not(:last-child) {
-    display: none;
+@media only screen and (min-width: 1011px) {
+  :root {
+    --Layout-sidebar-width: 296px;
   }
 }
