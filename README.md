@@ -1,5 +1,5 @@
 # CSS-micro-daily-02
-Created with CodeSandbox  
+Day 2 - Github sidebar 
 
 https://codesandbox.io/s/github/lrvaka/CSS-micro-daily-02/tree/main  
 
